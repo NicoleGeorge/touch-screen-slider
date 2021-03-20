@@ -40,11 +40,15 @@ function touchStart(index) {
     isDragging= true;
 
     animationID = requestAnimationFrame(animation)
+
+    slider.classList.add('grabbing')
   }
 }
 
 function touchEnd() {
-  isDragging=false;
+  isDragging = false;
+  cancelAnimationFrame(animationID)
+  slider.classList.remove('grabbing')
 }
 
 function touchMove(e) {
