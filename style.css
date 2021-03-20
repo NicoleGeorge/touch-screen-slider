@@ -8,17 +8,17 @@
 
 html,
 body {
-font-family: 'Montserrat', sans-serif;
-height: 100%;
-width: 100%;
-overflow: hidden;
-background-color:#f7f1ef;
-color: #111;
-line-height: 1.7;
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f7f1ef;
+  color: #111;
+  line-height: 1.7;
 }
 
 .slider-container {
-  height:100vh;
+  height: 100vh;
   display: inline-flex;
   overflow: hidden;
   transform: translateX(0);
@@ -49,4 +49,27 @@ line-height: 1.7;
 
 .slide h4 {
   font-size: 1.3rem;
+}
+
+.btn {
+  background-color: #c5daf0;
+  color: #111;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid #111;
+  border-radius: 55px;
+  transition: 0.4s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #e0f459;
+}
+
+.grabbing {
+  cursor: grabbing;
+}
+
+.grabbing .slide img {
+  transform: scale(0.9);
 }
