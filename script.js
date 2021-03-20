@@ -35,11 +35,11 @@ function touchStart(index) {
   return function (e) {
     currentIndex = index 
     // console.log(e.type.includes('mouse'))
-    startPosition = e.type.includes('mouse') 
-    ? e.pageX 
-    : e.touches[0].clientX
+    startPosition = getPositionX(e)
     // console.log(startPosition)
     isDragging= true;
+    
+    animationID = requestAnimationFrame(animation)
   }
 }
 
@@ -51,4 +51,19 @@ function touchMove() {
 if (isDragging) {
   console.log('move')
 }
+}
+
+function getPositionX(e) {
+  return e.type.includes('mouse') 
+    ? e.pageX 
+    : e.touches[0].clientX
+}
+
+function animation() {
+  setSliderPosition()
+  if(isDragging) requestAnimationFrame(animation)
+}
+
+function setSliderPosition() {
+    slider.style.transform = `translateX(${currentTranslate}px)`
 }
