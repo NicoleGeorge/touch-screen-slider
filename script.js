@@ -38,7 +38,7 @@ function touchStart(index) {
     startPosition = getPositionX(e)
     // console.log(startPosition)
     isDragging= true;
-    
+
     animationID = requestAnimationFrame(animation)
   }
 }
@@ -47,9 +47,11 @@ function touchEnd() {
   isDragging=false;
 }
 
-function touchMove() {
+function touchMove(e) {
 if (isDragging) {
-  console.log('move')
+  // console.log('move')
+  const currentPosition = getPositionX(e)
+  currentTranslate = prevTranslate + currentPosition - startPosition
 }
 }
 
