@@ -22,6 +22,13 @@ slides.forEach((slide, index) => {
   slide.addEventListener('mousemove', touchMove);
 })
 
+// DISABLE CONTEXT MENU
+window.oncontextmenu = (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  return false
+}
+
 // FUNCTIONS
 
 function touchStart(index) {
