@@ -48,6 +48,15 @@ function touchStart(index) {
 function touchEnd() {
   isDragging = false;
   cancelAnimationFrame(animationID)
+
+  const movedBy = currentTranslate - prevTranslate
+  if(movedBy < -100 && currentIndex < slides.length -1)
+  currentIndex +=1;
+
+  if(movedBy > 100 && currentIndex > 0) currentIndex -=1;
+  currentIndex +=1;
+
+
   slider.classList.remove('grabbing')
 }
 
